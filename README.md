@@ -1,7 +1,17 @@
-# Ambiente
+## Problemas
 
-Estamos utilizando do ReactJS para a integração com o Mercado Pago
-para inicializar o projeto, favor executar 
+O problema em questão está relacionado aos testes unitários que estão falhando, ao replicar nesse projeto de amostra vi que ocorre o warning mas não chega a quebrar o teste como no nosso projeto principal.
+
+O erro é o seguinte:
+
+```
+(node:28065) UnhandledPromiseRejectionWarning: TypeError: window.MercadoPago is not a constructor
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28065) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:28065) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+```
+
+para rodar o projeto executar o seguinte: 
 
 `npm install`
 
@@ -9,12 +19,8 @@ e logo após
 
 `npm start`
 
-## Problemas
+para executar os testes 
 
-- Para poder acessar configurações como por exemplo a `bricks` precisamos acessar por meio do `[[Prototype]]` do obj e a mesma coisa acontece para acessar o objeto para o `bricksBuilder`
-- Quando chamamos o `bricksBuilder` passando o `.create` ou outros métodos recebemos o seguinte erro 
+`npm test`
 
-      ``Uncaught (in promise) TypeError: attempted to get private field on non-instance``
-      
-- Também gostariamos de saber uma maneira de estilizar o input dentro do `iframe` caso optemos por utilizar o método `core`
 
