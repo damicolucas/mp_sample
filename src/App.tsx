@@ -20,7 +20,6 @@ function App() {
           onError: (error: any) => {},
         },
       };
-      console.log("bricksBuilder", bricksBuilder);
       //@ts-ignore
       window.cardPaymentBrickController = await bricksBuilder.create(
         "cardPayment",
@@ -34,9 +33,9 @@ function App() {
 
   React.useEffect(() => {
     configureMP();
-  }, []);
+  }, [configureMP]);
 
-  return <div className="cardPaymentBrick_container" data-testid="brick-container" />;
+  return <div id="cardPaymentBrick_container" data-testid="brick-container" />;
 }
 
 export default App;
